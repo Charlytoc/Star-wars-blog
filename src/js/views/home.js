@@ -5,6 +5,7 @@ import Character from "../component/characters.jsx";
 import Planets from "../component/planets.jsx";
 import { useState } from "react";
 import { useEffect } from "react";
+import Vehicles from "../component/vehicles.js";
 
 export const FavoritesContext = React.createContext();
 
@@ -13,6 +14,7 @@ export const Home = () => {
 	const [planets, setPlanets] = useState([])
 	const [people, setPeople] = useState([])
 	const [prueba, setPrueba] = useState([])
+	const [vehicle, setVehicles] = useState([])
 
 
 
@@ -30,6 +32,10 @@ export const Home = () => {
 		fetch("https://www.swapi.tech/api/people/")
     	.then((response) => response.json()) //lo transformamos en un json
     	.then((data) => setPeople(data.results)) //lo guardamos en un objeto
+
+		fetch("https://www.swapi.tech/api/vehicles/")
+    	.then((response) => response.json()) //lo transformamos en un json
+    	.then((data) => setVehicles(data.results)) //lo guardamos en un objeto
 	}
 
  useEffect( ()=>{obtenerDatos()}, [])
@@ -63,6 +69,11 @@ export const Home = () => {
 	<h1 className="text-danger">Planets</h1>
 	<div className="container-flex text-center mt-5 d-flex">
 		{planets.map( (item) => {return <Planets planetUrl={item.url} planetImage={item.uid} key={item.uid} planetName={item.name} />}  )}
+	</div>
+
+	<h1 className="text-danger">Vehicles</h1>
+	<div className="container-flex text-center mt-5 d-flex">
+		{vehicle.map( (item) => {return <Vehicles vehicleUrl={item.url} vehicleImage={item.uid} key={item.uid} vehicleName={item.name} />}  )}
 	</div>
 	</>
 	)
