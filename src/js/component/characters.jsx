@@ -1,14 +1,14 @@
 import React from "react"
 import rigoImage from "../../img/rigo-baby.jpg";
 import { Link } from "react-router-dom";
+import { FavoritesContext } from "../views/home.js";
 
-
-function Character () {
+function Character ({peopleName}) {
     return <>
     <div className="card m-2 text-start" style={{width: '15rem'}}>
   <img src={rigoImage} className="card-img-top" alt="..."/>
   <div className="card-body p-1">
-    <h5 className="card-title">Luke Skywalker</h5>
+    <h5 className="card-title">{peopleName}</h5>
     <p >Gender: Male</p>
     <p >Hair color: Black</p>
     <p >Eye color: Blue</p>
