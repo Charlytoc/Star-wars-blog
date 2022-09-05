@@ -3,10 +3,10 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import { Link } from "react-router-dom";
 
 
-function Planets ( {planetName, planetUrl}) {
+function Planets ( {planetName, planetUrl, planetImage}) {
     return <>
     <div className="card m-2 text-start" style={{width: '15rem'}}>
-  <img src={rigoImage} className="card-img-top" alt="..."/>
+  <img src={`https://starwars-visualguide.com/assets/img/planets/${planetImage}.jpg`} className="card-img-top" alt="..."/>
   <div className="card-body p-1">
     <h5 className="card-title">{planetName}</h5>
 

@@ -15,20 +15,13 @@ export const Home = () => {
 	const [prueba, setPrueba] = useState([])
 
 
-// 	const obtenerDatos = () => {
-// 		fetch("https://www.swapi.tech/api/planets/")
-// .then(res => res.json())
-// .then(data => setPlanets(data) )
-// .then(data => console.log(planets))
-// .catch(err => console.error(err))
-// 	}
 
 	const obtenerDatos = () => {
 		fetch("https://www.swapi.tech/api/planets/")
     	.then((response) => response.json()) //lo transformamos en un json
     	.then((data) => setPlanets(data.results)) //lo guardamos en un objeto
 
-
+		// NO FUNCIONÓ, SE SOBRECARGÓ LA PÁGINA
 		// for (let i=1; i<=10; i++ ) {
 		// 	fetch(`https://www.swapi.tech/api/planets/${i}`)
     	// .then((response) => response.json()) //lo transformamos en un json
@@ -54,31 +47,23 @@ export const Home = () => {
 // })
 //  }
 
-//  console.log(planets)
-//  console.log(people)
-//  const showsPrueba = () => {
-// 	console.log(prueba)
-// 	console.log(planets)
-//  }
-	let listOfFavorites = ["1", "2"]
+// 
 
 	return (
 		<>
-		<FavoritesContext.Provider value={listOfFavorites}>
 	<h1 className="text-danger">Characters</h1>
 	{/* <button onClick={ampliarDatos}>PRUBEA</button>
 	<button onClick={(showsPrueba)}>Mostrar estado actual</button> */}
 
 	<div className="container-flex mt-5 d-flex">
-		{people.map( (item) => {return <Character key={item.uid} peopleName={item.name} />})}
+		{people.map( (item) => {return <Character key={item.uid} peopleImage={item.uid}  peopleName={item.name} />})}
 		
 		
 	</div>
 	<h1 className="text-danger">Planets</h1>
 	<div className="container-flex text-center mt-5 d-flex">
-		{planets.map( (item) => {return <Planets planetUrl={item.url} key={item.uid} planetName={item.name} />}  )}
+		{planets.map( (item) => {return <Planets planetUrl={item.url} planetImage={item.uid} key={item.uid} planetName={item.name} />}  )}
 	</div>
-	</FavoritesContext.Provider>
 	</>
 	)
 }
