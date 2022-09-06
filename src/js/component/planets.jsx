@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Planets ( {planetName, planetUrl, planetImage}) {
     return <>
     <div className="card m-2 text-start" style={{width: '15rem'}}>
-  <img src={`https://starwars-visualguide.com/assets/img/planets/${planetImage}.jpg`} className="card-img-top" alt="..."/>
+  <img src={`https://starwars-visualguide.com/assets/img/planets/${planetImage}.jpg`} className="card-img-top" alt="Sorry, the imagen cannot be found, you'll see some random text written by the editor in some free minutes"/>
   <div className="card-body p-1">
     <h5 className="card-title">{planetName}</h5>
 

@@ -25,21 +25,20 @@ export const Home = () => {
 	
 	return (
 		<>
-	<h1 className="text-danger">Characters</h1>
-	<div className="container flex-nowrap">
+	<h1 className="text-danger ms-4">Characters</h1>
+	<div className="container">
 		<div className="row flex-nowrap">
 		{store.people.map( (item) => {return <Character key={item.uid} peopleImage={item.uid}  peopleName={item.name} />})}
 		</div>
 	</div>
-	<h1 className="text-danger">Planets</h1>
-	<div className="container flex-nowrap">
+	<h1 className="text-danger ms-4">Planets</h1>
+	<div className="container">
 		<div className="row flex-nowrap">
 		{store.planets.map( (item) => {return <Planets planetUrl={item.url} planetImage={item.uid} key={item.uid} planetName={item.name} />}  )}
 		</div>
 	</div>
-	<button>Agregar</button>
-	<h1 className="text-danger">Vehicles</h1>
-	<div className="container flex-nowrap">
+	<h1 className="text-danger ms-4">Vehicles</h1>
+	<div className="container">
 		<div className="row flex-nowrap">
 		{store.vehicles.map( (item) => {return <Vehicles vehicleUrl={item.url} vehicleImage={item.uid} key={item.uid} vehicleName={item.name} />}  )}
 		</div>
