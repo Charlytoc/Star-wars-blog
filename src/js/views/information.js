@@ -3,8 +3,10 @@ import React from "react";
 import LearnMore from "../component/learnmore.jsx";
  
 const Information = () => {
+
+    
     return (<>
-    <LearnMore />
+
     </>)
 }
 

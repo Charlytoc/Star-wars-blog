@@ -8,8 +8,12 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import Information from "./views/information";
 
+
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import PlanetInfo from "./views/planetInfo";
+import PeopleInfo from "./views/peopleInfo";
+import VehiclesInfo from "./views/vehiclesInfo";
 
 //create your first component
 const Layout = () => {
@@ -32,8 +36,14 @@ const Layout = () => {
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
-						<Route exact path="/information">
-							<Information />
+						<Route exact path="/planets/:uniqueid">
+							<PlanetInfo />
+						</Route>
+						<Route exact path="/people/:uniqueid">
+							<PeopleInfo />
+						</Route>
+						<Route exact path="/vehicles/:uniqueid">
+							<VehiclesInfo />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

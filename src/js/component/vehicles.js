@@ -11,7 +11,7 @@ function Vehicles ( {vehicleName, vehicleUrl, vehicleImage}) {
     <h5 className="card-title">{vehicleName}</h5>
 
     <a href={vehicleUrl}>Link to Swapi</a>
-    <Link to="/information"><button className="btn btn-outline-primary float-start">Learn more!</button></Link>
+    <Link to={`/vehicles/${vehicleImage}`}><button className="btn btn-outline-primary float-start">Learn more!</button></Link>
     <a href="#" className="btn btn-outline-primary float-end"><i className="fa fa-heart text-danger" /></a>
   </div>
 </div>

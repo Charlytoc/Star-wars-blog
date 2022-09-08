@@ -18,7 +18,10 @@ const getState = ({ getStore, // Se usa para obtener info de la store en el cont
 			people: [],
 			vehicles: [],
 			planets: [],
-			favorites: []
+			favorites: [],
+			peopleInfo: {},
+			planetInfo: {},
+			vehiclesInfo: {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -60,7 +63,23 @@ const getState = ({ getStore, // Se usa para obtener info de la store en el cont
 				fetch("https://www.swapi.tech/api/planets/")
 				.then((response) => response.json()) //lo transformamos en un json
 				.then((data) => setStore({planets: data.results})) //lo guardamos en un objeto
+			},
+			fetchPeopleInfo: (uid) => {
+				fetch(`https://www.swapi.tech/api/people/${uid}`)
+				.then((response) => response.json()) //lo transformamos en un json
+				.then((data) => setStore({peopleInfo: data.result})) //lo guardamos en un objeto
+			},
+			fetchPlanetInfo: (uid) => {
+				fetch(`https://www.swapi.tech/api/planets/${uid}`)
+				.then((response) => response.json()) //lo transformamos en un json
+				.then((data) => setStore({planetInfo: data.result})) //lo guardamos en un objeto
+			},
+			fetchVehiclesInfo: (uid) => {
+				fetch(`https://www.swapi.tech/api/vehicles/${uid}`)
+				.then((response) => response.json()) //lo transformamos en un json
+				.then((data) => setStore({vehiclesInfo: data.result})) //lo guardamos en un objeto
 			}
+			
 		}
 	};
 };

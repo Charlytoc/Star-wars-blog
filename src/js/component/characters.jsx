@@ -15,7 +15,7 @@ function Character ({peopleName, peopleImage}) {
     <p >Eye color: Blue</p>
     
     
-    <Link to="/information"><button className="btn btn-outline-primary float-start">Learn more!</button></Link>
+    <Link to={`/people/${peopleImage}`}><button className="btn btn-outline-primary float-start">Learn more!</button></Link>
     <a href="#" className="btn btn-outline-primary float-end"><i className="fa fa-heart text-danger" /></a>
   </div>
 </div>

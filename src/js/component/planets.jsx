@@ -11,7 +11,7 @@ function Planets ( {planetName, planetUrl, planetImage}) {
     <h5 className="card-title">{planetName}</h5>
 
     <a href={planetUrl}>Link to Swapi</a>
-    <Link to="/information"><button className="btn btn-outline-primary float-start">Learn more!</button></Link>
+    <Link to={`/planets/${planetImage}`}><button className="btn btn-outline-primary float-start">Learn more!</button></Link>
     <a href="#" className="btn btn-outline-primary float-end"><i className="fa fa-heart text-danger" /></a>
   </div>
 </div>
