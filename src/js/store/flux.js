@@ -47,8 +47,17 @@ const getState = ({ getStore, // Se usa para obtener info de la store en el cont
 			},
 			addFavorites: (param) => {
 				const store = getStore();
+				if (store.favorites.includes(param)) {
+					console.log("YA LO AGREGASTE COMO FAVORITO")
+				}
+				else {setStore({favorites: [...store.favorites, param]})}
 
-				setStore({favorites: [...store.favorites, param]})
+				
+			},
+			deleteFavorites: (itemToDelete) => {
+				const store = getStore();
+				const newFavorites = store.favorites.filter( (item) => item !== itemToDelete)
+				setStore({ favorites: newFavorites})
 			},
 			fetchPeople: () => {
 				fetch("https://www.swapi.tech/api/people/")
@@ -80,9 +89,6 @@ const getState = ({ getStore, // Se usa para obtener info de la store en el cont
 				fetch(`https://www.swapi.tech/api/vehicles/${uid}`)
 				.then((response) => response.json()) //lo transformamos en un json
 				.then((data) => setStore({vehiclesInfo: data.result})) //lo guardamos en un objeto
-			},
-			deleteFavorites: (param) => {
-
 			}
 			
 		}

@@ -10,8 +10,6 @@ function Character ({peopleName, peopleImage}) {
   
   const {store, actions} = useContext(Context)
 
-  console.log(store.favorites)
-
 
     return <>
     <div className="card m-2 text-start bg-dark text-light" style={{width: '15rem'}}>

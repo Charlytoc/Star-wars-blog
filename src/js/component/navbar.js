@@ -7,6 +7,8 @@ export const Navbar = () => {
 
 	const {store, actions} = useContext(Context)
 
+
+
 	return (
 		<nav className="navbar navbar-light bg-dark mb-3">
 			<Link to="/">
@@ -17,7 +19,7 @@ export const Navbar = () => {
     Favorites
   </button>
   <ul className="dropdown-menu">
-	{store.favorites.map( (item, index) => {return <li key={index}><a className="dropdown-item" href="#">{item}</a></li>} )}
+	{store.favorites.map( (item, index) => {return <li className="bg-dark" key={index}><a className="dropdown-item bg-dark text-light" href="#">{item}<button onClick={()=> {actions.deleteFavorites(item)} } className="btn-secondary float-end">x</button></a></li>} )}
     
   </ul>
 </div>
